@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <% include Partials/head.ejs %>
+  </head>
+  <body>
+ <% include Partials/header.ejs %>
+
+        <div id="hero-image-single" style="background-image: url('/images/<%= movie.hero_image%>')">
+            <h1 id = "hero-title"><%=title %></h1>
+            
+        </div>
+        
+<div class="content-padding clearfix">
+    <div class ="poster-wrapper">
+        <img src="/images/<%=movie.poster%>" class="img-responsive">
+    </div>
+
+
+    <div class="description-wrapper">
+        <div class="description">
+            <h2 class="movie-header">Description</h2>
+                <p><%=movie.description %></p>
+        </div>
+
+        <div class="main-characters">
+            <h2 class="moive-header">Main Characters</h2>
+            <ul>
+                <% for( var i = 0; i < movie.main_characters.length;i++){ %>
+                <li><%=movie.main_characters[i]%></li>
+            <%}%>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+    
+    <% include Partials/scripts.ejs %>
+    <% include Partials/footer.ejs %>
+      </body>
+</html>
